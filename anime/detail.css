@@ -1,0 +1,155 @@
+.hero.hero-detail {
+    grid-template-columns: 200px minmax(0, 1.3fr) minmax(0, 1fr);
+    gap: 32px;
+}
+
+.detail-poster {
+    width: 100%;
+    aspect-ratio: 2/3;
+    border-radius: var(--radius);
+    background: var(--surface);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.video-section {
+    margin-top: 40px;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 960px;
+    margin-top: 16px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.video-container::before {
+    content: "";
+    display: block;
+    padding-top: 56.25%;
+}
+
+.video-container iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+body.detail-douluo-dalu-chen-xin .detail-poster {
+    background-image: url("../images/Douluo Dalu Jiandao Chen Xin.webp");
+}
+
+body.detail-fatestrange-fake .detail-poster {
+    background-image: url("../images/Fatestrange Fake.jpg");
+}
+
+body.detail-guangyin-zhi-wai .detail-poster {
+    background-image: url("../images/Guangyin Zhi Wai.jpg");
+}
+
+body.detail-jigokuraku .detail-poster {
+    background-image: url("../images/Jigokuraku.webp");
+}
+
+body.detail-jjk-shimetsu-zenpen .detail-poster {
+    background-image: url("../images/Jujutsu Kaisen Shimetsu Kaiyuu - Zenpen.jpeg");
+}
+
+body.detail-trigun-stargaze .detail-poster {
+    background-image: url("../images/Trigun Stargaze.webp");
+}
+
+body.detail-yuusha-party .detail-poster {
+    background-image: url("../images/Yuusha Party wo Oidasareta Kiyoubinbou.webp");
+}
+
+body.detail-midnight-rail-specters .detail-poster {
+    background-image: url("../images/Baccano!.webp");
+}
+
+body.detail-starfall-orchestra .detail-poster {
+    background-image: url("../images/Hibike! Euphonium.webp");
+}
+
+body.detail-neon-dive-tokyo .detail-poster {
+    background-image: url("../images/Psycho-Pass.webp");
+}
+
+body.detail-sakura-no-kage .detail-poster {
+    background-image: url("../images/Sakura Quest.webp");
+}
+
+body.detail-iron-fortress .detail-poster {
+    background-image: url("../images/Kabaneri of the Iron Fortress.webp");
+}
+
+body.detail-moonlit-cafe .detail-poster {
+    background-image: url("../images/Is the Order a Rabbit.webp");
+}
+
+body.detail-void-drifters .detail-poster {
+    background-image: url("../images/Space Dandy.webp");
+}
+
+body.detail-crimson-blade-academy .detail-poster {
+    background-image: url("../images/Magi The Labyrinth of Magic.jpg");
+}
+
+body.detail-echoes-of-you .detail-poster {
+    background-image: url("../images/Your Lie in April.webp");
+}
+
+body.detail-beast-tamer-chronicles .detail-poster {
+    background-image: url("../images/Beast Tamer.webp");
+}
+
+body.detail-last-train-home .detail-poster {
+    background-image: url("../images/Anohana The Flower We Saw That Day.webp");
+}
+
+body[class^="detail-"] {
+    background:
+        radial-gradient(circle at top, rgba(15, 23, 42, 0.8), transparent 55%),
+        radial-gradient(circle at bottom, rgba(15, 23, 42, 0.9), transparent 60%),
+        url("../images/fantasy-anime-style-scene.jpg") center / cover fixed no-repeat,
+        #020617;
+}
+
+.hero-detail .hero-kicker {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.hero-video-icon {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+@media (max-width: 900px) {
+    .hero.hero-detail {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-detail .detail-poster {
+        order: -1;
+        max-width: 200px;
+        margin: 0 auto;
+    }
+
+    .hero-detail .hero-content {
+        order: 0;
+    }
+
+    .hero-detail .hero-meta {
+        order: 1;
+    }
+}

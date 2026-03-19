@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse anime by genre. AnimePlus.">
+    <title>Genre · Anime Plus</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+    <script src="anime-data.js"></script>
+    <script src="auth.js" defer></script>
+    <script src="genre.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-left">
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span class="nav-toggle-bar"></span>
+                    <span class="nav-toggle-bar"></span>
+                </button>
+                <a href="index.html" class="logo">AnimePlus</a>
+            </div>
+
+            <div class="nav-center">
+                <a href="index.html" class="nav-link">Discover</a>
+                <div class="nav-dropdown">
+                    <a href="genre.html" class="nav-dropdown-trigger nav-link-active">Genre <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
+                    <ul class="nav-dropdown-menu" aria-label="Browse by genre">
+                        <li><a href="genre.html">Any</a></li>
+                        <li><a href="genre.html?genre=Action">Action</a></li>
+                        <li><a href="genre.html?genre=Adventure">Adventure</a></li>
+                        <li><a href="genre.html?genre=Comedy">Comedy</a></li>
+                        <li><a href="genre.html?genre=Drama">Drama</a></li>
+                        <li><a href="genre.html?genre=Fantasy">Fantasy</a></li>
+                        <li><a href="genre.html?genre=Horror">Horror</a></li>
+                        <li><a href="genre.html?genre=Romance">Romance</a></li>
+                        <li><a href="genre.html?genre=Sci-Fi">Sci-Fi</a></li>
+                        <li><a href="genre.html?genre=Supernatural">Supernatural</a></li>
+                    </ul>
+                </div>
+                <div class="nav-dropdown">
+                    <button type="button" class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true" aria-label="Browse by year">Year <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+                    <ul class="nav-dropdown-menu" aria-label="Browse by year">
+                        <li><a href="year.html">Any</a></li>
+                        <li><a href="year.html?year=2026">2026</a></li>
+                        <li><a href="year.html?year=2025">2025</a></li>
+                        <li><a href="year.html?year=2024">2024</a></li>
+                        <li><a href="year.html?year=2023">2023</a></li>
+                    </ul>
+                </div>
+                <a href="watchlist.html" class="nav-link">Watchlist</a>
+            </div>
+
+            <div class="nav-right">
+                <form class="search" role="search" action="search.html" method="get" aria-label="Search anime">
+                    <i class="fas fa-search search-icon" aria-hidden="true"></i>
+                    <input type="search" name="q" class="search-input" placeholder="Search titles or genres..." aria-label="Search">
+                </form>
+                <div class="user-menu">
+                    <button class="user-toggle" type="button" aria-label="Account menu" aria-haspopup="true">
+                        <span class="user-toggle-avatar" aria-hidden="true"><i class="fas fa-user"></i></span>
+                        <span class="user-toggle-label">Account</span>
+                        <i class="fas fa-caret-down user-toggle-caret" aria-hidden="true"></i>
+                    </button>
+                    <div class="user-dropdown" aria-label="Account menu"></div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="top" class="main">
+        <section class="section genre-page">
+            <header class="section-header">
+                <h2 class="section-title">Browse by Genre</h2>
+                <p class="section-meta"><span id="result-count">0</span> titles</p>
+            </header>
+            <nav class="genre-links" aria-label="Choose genre">
+                <a href="genre.html" class="genre-link">Any</a>
+                <a href="genre.html?genre=Action" class="genre-link">Action</a>
+                <a href="genre.html?genre=Adventure" class="genre-link">Adventure</a>
+                <a href="genre.html?genre=Comedy" class="genre-link">Comedy</a>
+                <a href="genre.html?genre=Drama" class="genre-link">Drama</a>
+                <a href="genre.html?genre=Fantasy" class="genre-link">Fantasy</a>
+                <a href="genre.html?genre=Horror" class="genre-link">Horror</a>
+                <a href="genre.html?genre=Romance" class="genre-link">Romance</a>
+                <a href="genre.html?genre=Sci-Fi" class="genre-link">Sci-Fi</a>
+                <a href="genre.html?genre=Supernatural" class="genre-link">Supernatural</a>
+            </nav>
+            <div class="card-grid" id="genre-grid"></div>
+            <p class="empty" id="genre-empty">Choose a genre above.</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <p class="footer-copy">&copy; <span id="year">2026</span> AnimePlus. All rights reserved.</p>
+            <a href="#top" class="footer-top">Back to top</a>
+            <div class="footer-social">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="X"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
