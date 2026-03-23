@@ -514,13 +514,14 @@ img {
     }
 
 
-.user-menu:hover .user-dropdown {
-    display:none;
-}
+    .user-menu:hover .user-dropdown {
+        display: none;
 
-.user-menu:focus-within .user-dropdown {
-    display:block;
-}
+    }
+
+    .user-menu:focus-within .user-dropdown {
+        display: block;
+    }
 }
 .search {
     display: flex;
