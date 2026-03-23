@@ -6,7 +6,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__, static_folder=".", static_url_path="")
 ROOT = os.path.dirname(os.path.abspath(__file__))
-DB_PATH = os.path.join(ROOT, "animeplus.db")
+DB_PATH = os.environ.get("ANIMEPLUS_DB_PATH") or os.path.join(ROOT, "animeplus.db")
 app.config["SECRET_KEY"] = os.environ.get("ANIMEPLUS_SECRET_KEY") or secrets.token_hex(32)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + DB_PATH.replace("\\", "/")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
