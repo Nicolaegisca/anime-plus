@@ -105,37 +105,36 @@ document.addEventListener("DOMContentLoaded", function () {
             'register.html"><i class="fas fa-user-plus"></i> Register</a>' +
             themeRowHtml();
         wireThemeToggle();
-        return;
-    }
-
-    var first = username.charAt(0).toUpperCase();
-    setToggleUser(first);
-    panel.innerHTML =
-        '<div class="user-dropdown-header">' +
-        '<span class="user-dropdown-avatar">' +
-        esc(first) +
-        "</span>" +
-        '<div class="user-dropdown-info">' +
-        '<span class="user-dropdown-name">' +
-        esc(username) +
-        "</span></div></div>" +
-        '<div class="user-dropdown-divider"></div>' +
-        '<a class="user-dropdown-item" href="' +
-        prefix +
-        'watchlist.html"><i class="fas fa-heart"></i> Watchlist</a>' +
-        themeRowHtml() +
-        '<div class="user-dropdown-divider"></div>' +
-        '<a class="user-dropdown-item user-dropdown-logout" href="#" data-logout="1"><i class="fas fa-sign-out-alt"></i> Logout</a>';
-    wireThemeToggle();
-    var logoutLink = panel.querySelector("[data-logout]");
-    if (logoutLink) {
-        logoutLink.addEventListener("click", function (e) {
-            e.preventDefault();
-            try {
-                localStorage.removeItem("anime-plus-user");
-            } catch (e2) { }
-            window.location.reload();
-        });
+    } else {
+        var first = username.charAt(0).toUpperCase();
+        setToggleUser(first);
+        panel.innerHTML =
+            '<div class="user-dropdown-header">' +
+            '<span class="user-dropdown-avatar">' +
+            esc(first) +
+            "</span>" +
+            '<div class="user-dropdown-info">' +
+            '<span class="user-dropdown-name">' +
+            esc(username) +
+            "</span></div></div>" +
+            '<div class="user-dropdown-divider"></div>' +
+            '<a class="user-dropdown-item" href="' +
+            prefix +
+            'watchlist.html"><i class="fas fa-heart"></i> Watchlist</a>' +
+            themeRowHtml() +
+            '<div class="user-dropdown-divider"></div>' +
+            '<a class="user-dropdown-item user-dropdown-logout" href="#" data-logout="1"><i class="fas fa-sign-out-alt"></i> Logout</a>';
+        wireThemeToggle();
+        var logoutLink = panel.querySelector("[data-logout]");
+        if (logoutLink) {
+            logoutLink.addEventListener("click", function (e) {
+                e.preventDefault();
+                try {
+                    localStorage.removeItem("anime-plus-user");
+                } catch (e2) { }
+                window.location.reload();
+            });
+        }
     }
     
     try {
