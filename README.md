@@ -1,1 +1,1 @@
-"# anime-plus" 
+# anime-plus
