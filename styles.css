@@ -520,7 +520,7 @@ img {
     }
 
     .user-menu:focus-within .user-dropdown {
-        display: block;
+        display: none;
     }
 }
 .search {
@@ -1044,8 +1044,8 @@ img {
         flex-direction: column;
         position: absolute;
         top: 54px;
-        left: 0;
-        right: 0;
+        left: -18px;
+        right: -18px;
         z-index: 150;
         background: rgba(5, 7, 20, 0.98);
         padding: 12px 24px 16px;
