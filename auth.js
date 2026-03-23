@@ -137,4 +137,47 @@ document.addEventListener("DOMContentLoaded", function () {
             window.location.reload();
         });
     }
+    
+    try {
+        var mql = window.matchMedia("(max-width: 720px)");
+        if (mql && mql.matches) {
+            var userMenu = menu;
+            panel.style.display = "none";
+            toggle.addEventListener("click", function (e) {
+                e.stopPropagation();
+                var open = panel.style.display === "block";
+                panel.style.display = open ? "none" : "block";
+            });
+
+            function outsideClose(e) {
+                if (!userMenu.contains(e.target)) {
+                    panel.style.display = "none";
+                    try {
+                        toggle.blur();
+                    } catch (e2) { }
+                }
+            }
+
+            document.addEventListener("click", outsideClose);
+            document.addEventListener("touchstart", outsideClose);
+        }
+    } catch (e3) { }
+
+    try {
+        var navToggle = document.querySelector(".nav-toggle");
+        var navCenter = document.querySelector(".nav-center");
+        if (navToggle && navCenter) {
+            var mql2 = window.matchMedia("(max-width: 720px)");
+            if (mql2 && mql2.matches) {
+                function outsideNavClose(e) {
+                    if (!navCenter.contains(e.target) && !navToggle.contains(e.target)) {
+                        navCenter.classList.remove("open");
+                        navToggle.setAttribute("aria-expanded", "false");
+                    }
+                }
+                document.addEventListener("click", outsideNavClose);
+                document.addEventListener("touchstart", outsideNavClose);
+            }
+        }
+    } catch (e4) { }
 });
