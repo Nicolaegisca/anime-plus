@@ -140,7 +140,9 @@ document.addEventListener("DOMContentLoaded", function () {
     
     try {
         var mql = window.matchMedia("(max-width: 720px)");
-        if (mql && mql.matches) {
+        var isMobile = (window.innerWidth || 0) <= 720;
+        if (mql && mql.matches) isMobile = true;
+        if (isMobile) {
             var userMenu = menu;
             panel.style.display = "none";
             toggle.addEventListener("click", function (e) {
@@ -163,20 +165,38 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     } catch (e3) { }
 
+
     try {
         var navToggle = document.querySelector(".nav-toggle");
         var navCenter = document.querySelector(".nav-center");
         if (navToggle && navCenter) {
             var mql2 = window.matchMedia("(max-width: 720px)");
-            if (mql2 && mql2.matches) {
+            var isMobileNav = (window.innerWidth || 0) <= 720;
+            if (mql2 && mql2.matches) isMobileNav = true;
+            if (isMobileNav) {
+                function closeNav() {
+                    navCenter.classList.remove("open");
+                    navToggle.setAttribute("aria-expanded", "false");
+                }
+
                 function outsideNavClose(e) {
+                    if (!navCenter.classList.contains("open")) return;
                     if (!navCenter.contains(e.target) && !navToggle.contains(e.target)) {
-                        navCenter.classList.remove("open");
-                        navToggle.setAttribute("aria-expanded", "false");
+                        closeNav();
                     }
                 }
                 document.addEventListener("click", outsideNavClose);
                 document.addEventListener("touchstart", outsideNavClose);
+                navCenter.addEventListener(
+                    "click",
+                    function (e) {
+                        var t = e.target;
+                        if (t && (t.closest("a") || t.closest("button"))) {
+                            closeNav();
+                        }
+                    },
+                    true
+                );
             }
         }
     } catch (e4) { }
