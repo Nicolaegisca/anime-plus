@@ -1038,6 +1038,19 @@ img {
     .nav-center {
         display: none;
     }
+    .search {
+        paddin: 4px 10px;
+        gap:4px;
+    }
+
+    .search-icon{
+        font-size: 0.75rem;
+    }
+
+    .search-input {
+        width: 120px;
+        font-size: 0.82rem;
+    }
 
     .nav-center.open {
         display: flex;
