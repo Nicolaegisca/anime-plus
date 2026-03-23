@@ -1046,9 +1046,21 @@ img {
         top: 54px;
         left: 0;
         right: 0;
+        z-index: 150;
         background: rgba(5, 7, 20, 0.98);
         padding: 12px 24px 16px;
         gap: 10px;
+    }
+
+     .user-dropdown {
+        position: fixed;
+        top: 54px;
+        right: 18px;
+        left: auto;
+        max-width: calc(100vw - 36px);
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+        z-index: 250;
     }
 
     .nav-center.open .nav-filter {
