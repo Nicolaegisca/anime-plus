@@ -512,8 +512,16 @@ img {
     .user-toggle {
         padding: 4px;
     }
+
+
+.user-menu:hover .user-dropdown {
+    display:none;
 }
 
+.user-menu:focus-within .user-dropdown {
+    display:block;
+}
+}
 .search {
     display: flex;
     align-items: center;
