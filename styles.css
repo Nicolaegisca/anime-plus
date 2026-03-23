@@ -1042,10 +1042,11 @@ img {
     .nav-center.open {
         display: flex;
         flex-direction: column;
-        position: absolute;
+        position: fixed;
         top: 54px;
-        left: -18px;
-        right: -18px;
+        left: 0;
+        right: 0;
+        width:100%;
         z-index: 150;
         background: rgba(5, 7, 20, 0.98);
         padding: 12px 24px 16px;
